@@ -1096,6 +1096,9 @@
       }
     }
   }
+  .static {
+    position: static;
+  }
   .textarea {
     @layer daisyui.l1.l2.l3 {
       border: var(--border) solid #0000;
@@ -1375,6 +1378,9 @@
   }
   .bg-base-100 {
     background-color: var(--color-base-100);
+  }
+  .bg-base-200 {
+    background-color: var(--color-base-200);
   }
   .bg-blue-500 {
     background-color: var(--color-blue-500);

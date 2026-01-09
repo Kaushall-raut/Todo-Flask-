@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+<div class="max-w-5xl mx-auto p-2">
+  <form class="pt-2 my-3" method="post" action="/update/{{c_task.sno}}">
+    <fieldset class="fieldset">
+      <legend class="fieldset-legend font-semibold">Add Task</legend>
+      <input
+        type="text"
+        class="input border rounded my-2 p-2 w-full"
+        placeholder="Type here"
+        name="title"
+        value="{{c_task.title}}"
+      />
+    </fieldset>
+    <fieldset class="fieldset">
+      <legend class="fieldset-legend font-semibold">Add Description</legend>
+      <input
+        type="text"
+        class="input border p-2 rounded my-2 w-full"
+        placeholder="Type here"
+        name="desc"
+        value="{{c_task.desc}}"
+      />
+    </fieldset>
+    <button
+      class="transition hover:scale-90 cursor-pointer bg-blue-500 rounded p-2 font-semibold"
+      type="submit"
+    >
+      Update
+    </button>
+  </form>
+</div>
+{% endblock %}
