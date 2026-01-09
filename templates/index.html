@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <div class="max-w-5xl mx-auto p-2">
-  <form class="pt-2 my-3">
+  <form class="pt-2 my-3" method="post" action="/">
     <fieldset class="fieldset">
       <legend class="fieldset-legend font-semibold">Add Task?</legend>
       <input
@@ -35,27 +35,20 @@
           <th>Sno</th>
           <th>Title</th>
           <th>Desc</th>
+          <th>created_at</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- row 1 -->
+      <tbody class="text-center">
+        {% for i in data  %}
+         
         <tr>
-          <th>1</th>
-          <td>Cy Ganderton</td>
-          <td>Quality Control Specialist</td>
+          <th>{{loop.index}}</th>
+          <td>{{i.title}}</td>
+          <td>{{i.desc}}</td>
+          <td>{{i.created_At}}</td>
         </tr>
-        <!-- row 2 -->
-        <tr>
-          <th>2</th>
-          <td>Hart Hagerty</td>
-          <td>Desktop Support Technician</td>
-        </tr>
-        <!-- row 3 -->
-        <tr>
-          <th>3</th>
-          <td>Brice Swyre</td>
-          <td>Tax Accountant</td>
-        </tr>
+        {% endfor %}
+   
       </tbody>
     </table>
   </div>
