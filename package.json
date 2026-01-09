@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "daisyui": "^5.5.14",
     "tailwindcss": "^4.1.18"
   },
   "description": "",

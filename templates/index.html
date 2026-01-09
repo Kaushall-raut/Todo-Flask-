@@ -28,27 +28,36 @@
   </form>
   <div class="rounded-box border-base-content/5 bg-base-100">
     <h1 class="font-semibold text-3xl">Your Todos</h1>
+    {% if data|length == 0 %}
+       <h2 class="text-2xl mt-2 ">Your todo is empty</h2>
+    {% endif %}
+
+        {% for i in data %}
     <table class="table my-3 w-full">
       <!-- head -->
-      <thead class="bg-slate-200">
+      <thead class="bg-slate-200 text-black">
         <tr>
           <th>Sno</th>
           <th>Title</th>
           <th>Desc</th>
           <th>created_at</th>
+          <th>Actions</th>
         </tr>
       </thead>
-      <tbody class="text-center">
-        {% for i in data  %}
-         
+      <tbody >
         <tr>
           <th>{{loop.index}}</th>
           <td>{{i.title}}</td>
           <td>{{i.desc}}</td>
           <td>{{i.created_At}}</td>
+          <td>
+            <a class="btn btn-outline btn-secondary mx-1">Update</a>
+            <a class="btn btn-outline btn-error" href="/delete/{{i.sno}}"
+              >Delete</a
+            >
+          </td>
         </tr>
         {% endfor %}
-   
       </tbody>
     </table>
   </div>
