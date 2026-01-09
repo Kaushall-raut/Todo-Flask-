@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 <div class="max-w-5xl bg-base-200 mx-auto p-2">
-  <form class="pt-2 my-3" method="post" action="/">
+  <form class="pt-2 my-3 " method="post" action="/">
     <fieldset class="fieldset">
-      <legend class="fieldset-legend font-semibold">Add Task?</legend>
+      <legend class="fieldset-legend font-semibold ">Add Task</legend>
       <input
         type="text"
         class="input border rounded my-2 p-2 w-full"
@@ -33,7 +33,7 @@
     {% endif %}
 
         {% for i in data %}
-    <table class="table my-3 w-full">
+    <table class="table my-3 w-full" id="todoTable">
       <!-- head -->
       <thead class="bg-slate-200 text-black">
         <tr>
@@ -49,7 +49,7 @@
           <th>{{loop.index}}</th>
           <td>{{i.title}}</td>
           <td>{{i.desc}}</td>
-          <td>{{i.created_At}}</td>
+          <td class="trim">{{i.created_At.strftime('%d-%m-%Y %H:%M')}}</td>
           <td>
             <a class="btn btn-outline btn-secondary mx-1" href="/update/{{i.sno}}">Update</a>
             <a class="btn btn-outline btn-error" href="/delete/{{i.sno}}"
